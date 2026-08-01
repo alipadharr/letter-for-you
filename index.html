@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,.2);
+text-align:center;
+max-width:500px;
+animation:fadeIn 1.5s;
+}
+
+h1{
+color:#ff4d6d;
+margin-bottom:20px;
+}
+
+#text{
+font-size:18px;
+line-height:1.8;
+white-space:pre-line;
+color:#444;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#ff4d6d;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1e56;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:scale(.8);}
+to{opacity:1;transform:scale(1);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>❤️ Open My Letter ❤️</h1>
+
+<div id="text"></div>
+
+<button onclick="showLetter()">Open</button>
+
+</div>
+
+<script>
+
+const message=Hai Sayang ❤️
+
+Terima kasih sebab masih ada dengan saya.
+
+Awak ialah orang yang paling saya hargai.
+
+Semoga hubungan kita berkekalan sampai tua.
+
+I love you so much ❤️;
+
+function showLetter(){
+
+let i=0;
+
+document.getElementById("text").innerHTML="";
+
+let speed=50;
+
+let typing=setInterval(function(){
+
+document.getElementById("text").innerHTML+=message.charAt(i);
+
+i++;
+
+if(i>=message.length){
+clearInterval(typing);
+}
+
+},speed);
+
+}
+
+</script>
+
+</body>
+</html>
