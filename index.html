@@ -6,82 +6,56 @@
 <title>For You ❤️</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-height:100vh;
+margin:0;
+font-family:Arial,sans-serif;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
+height:100vh;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 }
 
 .card{
-background:white;
-padding:40px;
+background:#fff;
+padding:30px;
 border-radius:20px;
-box-shadow:0 0 25px rgba(0,0,0,.2);
 text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 max-width:500px;
-animation:fadeIn 1.5s;
-}
-
-h1{
-color:#ff4d6d;
-margin-bottom:20px;
-}
-
-#text{
-font-size:18px;
-line-height:1.8;
-white-space:pre-line;
-color:#444;
 }
 
 button{
-margin-top:25px;
 padding:12px 25px;
 border:none;
-border-radius:30px;
+border-radius:25px;
 background:#ff4d6d;
 color:white;
 font-size:16px;
 cursor:pointer;
 }
 
-button:hover{
-background:#ff1e56;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:scale(.8);}
-to{opacity:1;transform:scale(1);}
+#text{
+margin-top:20px;
+white-space:pre-line;
+font-size:18px;
+line-height:1.6;
 }
 </style>
 
 </head>
-
 <body>
 
 <div class="card">
-
-<h1>❤️ Open My Letter ❤️</h1>
-
-<div id="text"></div>
+<h2>❤️ Open My Letter ❤️</h2>
 
 <button onclick="showLetter()">Open</button>
 
+<div id="text"></div>
 </div>
 
 <script>
-
-const message=Hai Sayang ❤️
+const message = Hai Sayang ❤️
 
 Terima kasih sebab masih ada dengan saya.
 
@@ -91,28 +65,20 @@ Semoga hubungan kita berkekalan sampai tua.
 
 I love you so much ❤️;
 
-function showLetter(){
+function showLetter() {
+  let i = 0;
+  const text = document.getElementById("text");
+  text.innerHTML = "";
 
-let i=0;
+  const typing = setInterval(function () {
+    text.innerHTML += message.charAt(i);
+    i++;
 
-document.getElementById("text").innerHTML="";
-
-let speed=50;
-
-let typing=setInterval(function(){
-
-document.getElementById("text").innerHTML+=message.charAt(i);
-
-i++;
-
-if(i>=message.length){
-clearInterval(typing);
+    if (i >= message.length) {
+      clearInterval(typing);
+    }
+  }, 50);
 }
-
-},speed);
-
-}
-
 </script>
 
 </body>
